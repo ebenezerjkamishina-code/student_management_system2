@@ -119,3 +119,24 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL= '/'
 LOGOUT_REDIRECT_URL='/accounts/login/'
 LOGIN_URL='/accounts/login/'
+
+
+import os
+import dj_database_url
+
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
+    # ... rest of your middleware
+]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DATABASES = {
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
+}
