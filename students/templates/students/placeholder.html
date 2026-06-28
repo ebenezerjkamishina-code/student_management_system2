@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - Student Management System</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb86b 0%, #ff6b9d 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+        a {
+            background: #fff;
+            color: #ff4f7c;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        a:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ title }}</h1>
+        <p>{{ content|default:"Content coming soon..." }}</p>
+        <a href="{% url 'home' %}">← Back to Home</a>
+    </div>
+</body>
+</html>
