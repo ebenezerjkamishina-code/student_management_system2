@@ -125,7 +125,7 @@ import os
 import dj_database_url
 
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['student-management-system2-j353.onrender.com','localhost','127.0.0.1']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
